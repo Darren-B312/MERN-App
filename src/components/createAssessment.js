@@ -15,8 +15,8 @@ class CreateAssessment extends React.Component {
             AssessmentTitle: '',
             AssessmentWeight: 0,
             AssessmentGrade: 0,
-          };
-        
+        };
+
         this.handleChangedAssessmentTitle = this.handleChangedAssessmentTitle.bind(this);
         this.handleChangedAssessmentWeight = this.handleChangedAssessmentWeight.bind(this);
         this.handleChangedAssessmentGrade = this.handleChangedAssessmentGrade.bind(this);
@@ -53,8 +53,8 @@ class CreateAssessment extends React.Component {
         newSubject.Assessments.push(newAssessment)
 
         Axios.patch("http://localhost:4000/api/subjects/" + this.state._id, newSubject)
-        .then()
-        .catch();
+            .then()
+            .catch();
 
         this.setState({
             AssessmentTitle: '',
@@ -64,16 +64,16 @@ class CreateAssessment extends React.Component {
 
     componentDidMount() {
         Axios.get('http://localhost:4000/api/subjects/' + this.props.match.params.id)
-          .then((response) => {
-            this.setState({
-                _id: response.data._id,
-                Title: response.data.Title,
-                Credits: response.data.Credits,
-                Assessments: response.data.Assessments
-              })
-          })
-          .catch();
-      }
+            .then((response) => {
+                this.setState({
+                    _id: response.data._id,
+                    Title: response.data.Title,
+                    Credits: response.data.Credits,
+                    Assessments: response.data.Assessments
+                })
+            })
+            .catch();
+    }
 
     render() {
         return (

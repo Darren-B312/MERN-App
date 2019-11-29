@@ -60,17 +60,10 @@ app.patch('/api/subjects/:id', (req, res) => {
     })
 })
 
-// app.put('/api/subjects/:id',(req,res)=>{
-//     console.log("Edit: "+req.params.id);
-//     console.log(req.body);
-    
-//     SubjectModel.findByIdAndUpdate(req.params.id,
-//         req.body,
-//         {new:true},
-//         (error,data)=>{
-//             res.json(data);
-//         })
+// app.patch('/api/assessments/:id', (req, res) => {
+//     SubjectModel.findByIdAndUpdate()
 // })
+
 
 // delete
 app.delete("/api/subjects/:id", (req, res) => {

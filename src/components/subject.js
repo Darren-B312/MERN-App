@@ -17,6 +17,15 @@ class Subject extends React.Component {
         .catch();
     }
 
+    // componentDidMount() {
+    //     for(var i = 0; i < this.props.Assessments.size(); i++) {
+    //         this.props.OverallGrade += this.props.Assessments[i].Grade;
+    //     }
+
+    //     console.loog(this.props.OverallGrade);
+
+    // }
+
 
     render() {
         return (
