@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 
 import Subjects from '../components/subjects';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 class Read extends React.Component {
     constructor() {
@@ -37,8 +38,10 @@ class Read extends React.Component {
 
     render() {
         return (
-            <div className="Read">
-                <Subjects mySubjects={this.state.Subjects} ReloadDataMethod={this.ReloadDataMethod}></Subjects>
+            <div style={{ alignItems: "center", justifyContent: "center", display: "flex", padding: "15px" }} className="Read">
+                <CardDeck>
+                    <Subjects mySubjects={this.state.Subjects} ReloadDataMethod={this.ReloadDataMethod}></Subjects>
+                </CardDeck>
             </div>
         );
     }

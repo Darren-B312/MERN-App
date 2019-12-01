@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import Axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class CreateAssessment extends React.Component {
 
@@ -77,22 +79,18 @@ class CreateAssessment extends React.Component {
 
     render() {
         return (
-            <div className="CreateAssessment">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>Assessment Name:</label>
-                        <input type="text" className="form-control" value={this.state.AssessmentTitle} onChange={this.handleChangedAssessmentTitle} />
-                    </div>
-                    <div className="form-group">
-                        <label>Assessment Weight:</label>
-                        <input type="text" className="form-control" value={this.state.AssessmentWeight} onChange={this.handleChangedAssessmentWeight} />
-                    </div>
-                    <div className="form-group">
-                        <label>Assessment Grade:</label>
-                        <input type="text" className="form-control" value={this.state.AssessmentGrade} onChange={this.handleChangedAssessmentGrade} />
-                    </div>
-                    <input type="submit" value="Submit" />
-                </form>
+            <div style={{ alignItems: "center", justifyContent: "center", display: "flex", padding: "15px" }} className="Create">
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Assessment Title: </Form.Label>
+                        <Form.Control placeholder="Lab Exam 1" type="text" className="form-control" value={this.state.AssessmentTitle} onChange={this.handleChangedAssessmentTitle} /><br></br>
+                        <Form.Label>Weight: </Form.Label>
+                        <Form.Control type="text" className="form-control" value={this.state.AssessmentWeight} onChange={this.handleChangedAssessmentWeight} /><br></br>
+                        <Form.Label>Grade: </Form.Label>
+                        <Form.Control type="text" className="form-control" value={this.state.AssessmentGrade} onChange={this.handleChangedAssessmentGrade} /><br></br>
+                        <Button block variant="outline-primary" type="submit" value="Submit">Add Assessment</Button>
+                    </Form.Group>
+                </Form>
             </div>
         );
     }

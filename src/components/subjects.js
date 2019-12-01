@@ -1,7 +1,10 @@
 import React from 'react';
 import '../App.css';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Card from 'react-bootstrap/Card';
 
 import Subject from '../components/subject';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 class Subjects extends React.Component {
 
@@ -9,14 +12,9 @@ class Subjects extends React.Component {
         return this.props.mySubjects.map((subject) => {
             return (
                 <div className="Subjects">
-                    <hr></hr>
-                    <Subject subject={subject} ReloadDataMethod={this.props.ReloadDataMethod}></Subject>
-                    <hr></hr>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                        <Subject subject={subject} ReloadDataMethod={this.props.ReloadDataMethod}></Subject>
                 </div>
-            );         
+            );
         })
     }
 }

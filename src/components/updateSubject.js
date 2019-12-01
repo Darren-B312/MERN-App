@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import Axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class Update extends React.Component {
 
@@ -73,19 +75,17 @@ class Update extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>Subject Title:</label>
-                        <input type="text" className="form-control" value={this.state.Title} onChange={this.handleChangedSubjectTitle} />
-                    </div>
-                    <div className="form-group">
-                        <label>Credits:</label>
-                        <input type="text" className="form-control" value={this.state.Credits} onChange={this.handleChangedSubjectCredits} />
-                    </div>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
+            <div style={{ alignItems: "center", justifyContent: "center", display: "flex", padding: "15px" }} className="Create">
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Module Title: </Form.Label>
+                        <Form.Control placeholder="Operating Systems" type="text" className="form-control" value={this.state.Title} onChange={this.handleChangedSubjectTitle} /><br></br>
+                        <Form.Label>Credits: </Form.Label>
+                        <Form.Control type="text" className="form-control" value={this.state.Credits} onChange={this.handleChangedSubjectCredits} /><br></br>
+                        <Button block variant="outline-primary" type="submit" value="Submit">Update Module</Button>
+                    </Form.Group>
+                </Form>
+            </div> 
         );
     }
 }
