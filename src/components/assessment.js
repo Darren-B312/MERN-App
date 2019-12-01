@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import Axios from 'axios';
 
 class Assessment extends React.Component {
 
@@ -9,7 +8,7 @@ class Assessment extends React.Component {
             <div>
                 <p>Assessment: {this.props.assessment.Name}</p>
                 <p>Weight: {this.props.assessment.Weight}</p>
-                <p>Grade: {this.props.assessment.Grade}</p>
+                <p>Grade: {this.props.assessment.Grade}%</p>
             </div>
         );
     }

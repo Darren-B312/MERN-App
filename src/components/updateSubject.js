@@ -34,17 +34,10 @@ class Update extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-
-
-
         const newSubject = {
             Title: this.state.Title,
             Credits: this.state.Credits
         }
-
-
-        console.log(newSubject);
-
 
         Axios.patch("http://localhost:4000/api/subjects/" + this.state._id, newSubject)
             .then()
@@ -57,7 +50,6 @@ class Update extends React.Component {
     }
 
     componentDidMount() {
-
         Axios.get('http://localhost:4000/api/subjects/' + this.props.match.params.id)
             .then((response) => {
                 console.log(response);
@@ -66,11 +58,9 @@ class Update extends React.Component {
                     Title: response.data.title,
                     Credits: response.data.credits,
                     Assessments: response.data.assessments
-                    
                 })
             })
             .catch();
-
     }
 
     render() {
@@ -85,7 +75,7 @@ class Update extends React.Component {
                         <Button block variant="outline-primary" type="submit" value="Submit">Update Module</Button>
                     </Form.Group>
                 </Form>
-            </div> 
+            </div>
         );
     }
 }

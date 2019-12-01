@@ -39,22 +39,22 @@ class CreateAssessment extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        const newAssessment = {
+        const newAssessment = { // create a new Assessment object
             Name: this.state.AssessmentTitle,
             Weight: this.state.AssessmentWeight,
             Grade: this.state.AssessmentGrade
         }
 
-        const newSubject = {
+        const newSubject = { // re-create subject with data from state
             Title: this.state.Title,
             Credits: this.state.Credits,
             OverallGrade: this.state.OverallGrade,
             Assessments: this.state.Assessments
         }
 
-        newSubject.Assessments.push(newAssessment)
+        newSubject.Assessments.push(newAssessment) // add newly created assessment to Assessments[] array
 
-        Axios.patch("http://localhost:4000/api/subjects/" + this.state._id, newSubject)
+        Axios.patch("http://localhost:4000/api/subjects/" + this.state._id, newSubject) // replace existing db Subject with new Subject which contains the newly added Assessment
             .then()
             .catch();
 
@@ -65,7 +65,7 @@ class CreateAssessment extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:4000/api/subjects/' + this.props.match.params.id)
+        Axios.get('http://localhost:4000/api/subjects/' + this.props.match.params.id) // get the subject from db with a given id
             .then((response) => {
                 this.setState({
                     _id: response.data._id,

@@ -14,14 +14,13 @@ class CreateSubject extends React.Component {
             OverallGrade: 0,
             Assessments: []
         }
-        
+
         this.handleChangedSubjectTitle = this.handleChangedSubjectTitle.bind(this);
         this.handleChangedSubjectCredits = this.handleChangedSubjectCredits.bind(this);
         this.handleChangedSubjectOverallGrade = this.handleChangedSubjectOverallGrade.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
 
     handleChangedSubjectTitle(e) {
         this.setState({ Title: e.target.value });
@@ -30,7 +29,7 @@ class CreateSubject extends React.Component {
         this.setState({ Credits: e.target.value });
     }
     handleChangedSubjectOverallGrade(e) {
-        this.setState({ OverallGrade: e.target.value});
+        this.setState({ OverallGrade: e.target.value });
     }
 
     handleSubmit(e) {
@@ -55,13 +54,13 @@ class CreateSubject extends React.Component {
 
     render() {
         return (
-            <div style={{ alignItems: "center", justifyContent: "center", display: "flex", padding: "15px" }}className="Create">
+            <div style={{ alignItems: "center", justifyContent: "center", display: "flex", padding: "15px" }} className="Create">
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Label>Module Title: </Form.Label>
-                        <Form.Control placeholder="Operating Systems" type="text" className="form-control" value={this.state.Title} onChange={this.handleChangedSubjectTitle}/><br></br>
+                        <Form.Control placeholder="Operating Systems" type="text" className="form-control" value={this.state.Title} onChange={this.handleChangedSubjectTitle} /><br></br>
                         <Form.Label>Credits: </Form.Label>
-                        <Form.Control type="text" className="form-control" value={this.state.Credits} onChange={this.handleChangedSubjectCredits}/><br></br>
+                        <Form.Control type="text" className="form-control" value={this.state.Credits} onChange={this.handleChangedSubjectCredits} /><br></br>
                         <Button block variant="outline-primary" type="submit" value="Submit">Create Module</Button>
                     </Form.Group>
                 </Form>

@@ -1,10 +1,9 @@
 import React from 'react';
 import '../App.css';
 import Axios from 'axios';
-
-
-import Subjects from '../components/subjects';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Subjects from '../components/subjects';
+
 
 class Read extends React.Component {
     constructor() {
@@ -18,22 +17,22 @@ class Read extends React.Component {
 
     componentDidMount() {
         Axios.get("http://localhost:4000/api/subjects")
-        .then((res) => {
-            this.setState({Subjects: res.data.subjects})
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+            .then((res) => {
+                this.setState({ Subjects: res.data.subjects })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     ReloadDataMethod() {
         Axios.get("http://localhost:4000/api/subjects")
-        .then((res) => {
-            this.setState({Subjects: res.data.subjects})
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+            .then((res) => {
+                this.setState({ Subjects: res.data.subjects })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     render() {

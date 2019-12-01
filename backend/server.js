@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 
 const mongodb = "mongodb+srv://fred:fred@cluster0-9zu60.mongodb.net/MERN-ProjectDB?retryWrites=true&w=majority";
-mongoose.connect(mongodb, {useNewUrlParser:true});
+mongoose.connect(mongodb, { useNewUrlParser: true });
 
 const cors = require('cors'); app.use(cors());
 app.use(function (req, res, next) {
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 const Schema = mongoose.Schema;
 
-const subjectSchema = new Schema( {
+const subjectSchema = new Schema({
     Title: String,
     Credits: Number,
     SubjectGrade: Number,
@@ -30,10 +30,10 @@ const subjectSchema = new Schema( {
 
 const SubjectModel = mongoose.model("subject", subjectSchema);
 
-app.listen(port, () => console.log(`MERN app listening on port ${port}!`));
+app.listen(port, () => console.log(`myGrades app listening on port ${port}`));
 
 // create
-app.post('/api/subjects', (req, res) => { 
+app.post('/api/subjects', (req, res) => {
     SubjectModel.create({
         Title: req.body.title,
         Credits: req.body.credits
@@ -41,36 +41,41 @@ app.post('/api/subjects', (req, res) => {
 })
 
 // read
-app.get("/api/subjects", (req, res) => { 
+app.get("/api/subjects", (req, res) => {
     SubjectModel.find((error, data) => {
-        res.json({subjects:data});
+        res.json({ subjects: data });
     })
 })
 
 app.get("/api/subjects/:id", (req, res) => {
     SubjectModel.findById(req.params.id, (error, data) => {
-        res.json(data);
+        if (error) {
+            res.json(error);
+        }
+        else {
+            res.json(data);
+        }
     })
 })
 
 // update
 app.patch('/api/subjects/:id', (req, res) => {
-    SubjectModel.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, data) => {
-        res.json(data);
+    SubjectModel.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, data) => {
+        if (error) {
+            res.json(error);
+        }
+        else {
+            res.json(data);
+        }
     })
 })
-
-// app.patch('/api/assessments/:id', (req, res) => {
-//     SubjectModel.findByIdAndUpdate()
-// })
-
 
 // delete
 app.delete("/api/subjects/:id", (req, res) => {
     console.log(req.params.id);
-    SubjectModel.deleteOne({_id: req.params.id}, (error, data) => {
-        if(error) {
-            console.log(res.json(error));
+    SubjectModel.deleteOne({ _id: req.params.id }, (error, data) => {
+        if (error) {
+            res.json(error);
         }
         else {
             res.json(data);
