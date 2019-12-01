@@ -10,7 +10,7 @@ class Subjects extends React.Component {
             return (
                 <div className="Subjects">
                     <hr></hr>
-                    <Subject subject={subject}></Subject>
+                    <Subject subject={subject} ReloadDataMethod={this.props.ReloadDataMethod}></Subject>
                     <hr></hr>
                     <br></br>
                     <br></br>

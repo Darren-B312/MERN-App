@@ -15,6 +15,7 @@ class CreateSubject extends React.Component {
         
         this.handleChangedSubjectTitle = this.handleChangedSubjectTitle.bind(this);
         this.handleChangedSubjectCredits = this.handleChangedSubjectCredits.bind(this);
+        this.handleChangedSubjectOverallGrade = this.handleChangedSubjectOverallGrade.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,14 +27,17 @@ class CreateSubject extends React.Component {
     handleChangedSubjectCredits(e) {
         this.setState({ Credits: e.target.value });
     }
+    handleChangedSubjectOverallGrade(e) {
+        this.setState({ OverallGrade: e.target.value});
+    }
 
     handleSubmit(e) {
         e.preventDefault();
 
         const newSubject = {
             title: this.state.Title,
-            overallGrade: this.state.OverallGrade,
-            credits: this.state.Credits
+            credits: this.state.Credits,
+            overallGrade: this.state.OverallGrade
         }
 
         Axios.post("http://localhost:4000/api/subjects", newSubject)
@@ -42,7 +46,8 @@ class CreateSubject extends React.Component {
 
         this.setState({
             Title: '',
-            Credits: ''
+            Credits: '',
+            OverallGrade: 0
         })
     }
 

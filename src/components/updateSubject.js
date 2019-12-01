@@ -16,21 +16,10 @@ class Update extends React.Component {
 
         this.handleChangedSubjectTitle = this.handleChangedSubjectTitle.bind(this);
         this.handleChangedSubjectCredits = this.handleChangedSubjectCredits.bind(this);
-        this.calculateOverallgrade = this.calculateOverallgrade.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    calculateOverallgrade() {
-        var total;
-
-        console.log(this.state.Assessments);
-        // array.forEach(element => {
-            
-        // });
-
-        this.setState({ OverallGrade: total})
-    }
 
     handleChangedSubjectTitle(e) {
         this.setState({ Title: e.target.value });
@@ -42,6 +31,8 @@ class Update extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+
 
 
         const newSubject = {
@@ -67,16 +58,16 @@ class Update extends React.Component {
 
         Axios.get('http://localhost:4000/api/subjects/' + this.props.match.params.id)
             .then((response) => {
+                console.log(response);
                 this.setState({
                     _id: response.data._id,
                     Title: response.data.title,
                     Credits: response.data.credits,
                     Assessments: response.data.assessments
+                    
                 })
             })
             .catch();
-
-            this.calculateOverallgrade();
 
     }
 
