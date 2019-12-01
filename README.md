@@ -1,3 +1,53 @@
+# Data Representation & Querying - myGrades - Academic Grades Calculator
+A simple single page grades calculator application.
+
+# Application Features
+My applicaion enables users to: 
+  - Add their modules, assessments and grades to a database
+  - Update & delete this information as they see fit
+  - Get a grade based on their assessment results and weighting
+
+# Technologies & Framework 
+This application was built using the following technologies:
+* [MongoDB] - Cross-platform document-oriented database.
+* [Express.js] -  Web application framework for Node.js
+* [React] - JavaScript library for building user interfaces.
+* [Node.js] - Cross-platform JavaScript run-time environment.
+* [Git] - Distributed version-control system.
+* [Visual Studio Code] - Code editor redefined and optimized for building and debugging modern web and cloud applications.
+
+[MongoDB]: <https://www.mongodb.com/>
+[Express.js]: <https://expressjs.com/>
+[React]: <https://reactjs.org/>
+[Node.js]: <https://nodejs.org/en/>
+[Git]: <https://git-scm.com/>
+[Visual Studio Code]: <https://code.visualstudio.com/>
+
+# Installation
+After cloning or downloading the zip archive from this Github repository:
+```sh
+$ cd MERN-Project
+$ npm install
+$ npm start
+$ y
+```
+After some time, the application should launch in your default web browser.
+
+# License
+GNU General Public License v3.0
+
+For more information about this software license, refer to the [LICENSE.md] file in this project.
+
+[LICENSE.md]: <https://github.com/G00299944/MAD-Project/blob/master/LICENSE>
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
