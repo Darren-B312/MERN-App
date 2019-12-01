@@ -29,7 +29,6 @@ After cloning or downloading the zip archive from this Github repository:
 $ cd MERN-Project
 $ npm install
 $ npm start
-$ y
 ```
 After some time, the application should launch in your default web browser.
 

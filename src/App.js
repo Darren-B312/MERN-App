@@ -16,7 +16,7 @@ class App extends React.Component {
         <div className="App">
           <Navbar bg="light">
             <Nav.Link href="/">myGrades</Nav.Link>
-            <Nav.Link href="/createSubject">New Subject</Nav.Link>
+            <Nav.Link href="/createSubject">New Module</Nav.Link>
           </Navbar>
 
           <Switch>
